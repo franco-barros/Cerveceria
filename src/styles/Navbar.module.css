@@ -1,0 +1,142 @@
+/* ================================
+   NAVBAR TEMPLARIA
+================================ */
+.navbar {
+  /* Paleta templaria */
+  --gold: #d5a253;
+  --amber: #c88a2a;
+  --carbon: #1c1c1c;
+  --wood: #4a2e1b;
+  --wheat: #f5e3c0;
+
+  background: rgba(26, 18, 12, 0.78); /* oscuro + translúcido artesanal */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(213, 162, 83, 0.3);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* Navbar al hacer scroll */
+.scrolled {
+  background: rgba(26, 18, 12, 0.92);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+  border-color: rgba(213, 162, 83, 0.18);
+}
+
+/* ================================
+   CONTENEDOR
+================================ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ================================
+   LINKS
+================================ */
+.links {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.navLink {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  color: var(--wheat) !important;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.4rem 0.2rem;
+
+  position: relative;
+  transition: color 0.25s ease, transform 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--gold) !important;
+  transform: translateY(-1px);
+}
+
+/* Activo */
+.activeLink {
+  color: var(--gold) !important;
+  font-weight: 600;
+}
+
+.activeLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.25rem;
+  width: 100%;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+/* ================================
+   BOTÓN MENÚ MOBILE
+================================ */
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+
+  color: var(--wheat) !important;
+  transition: color 0.25s ease;
+}
+
+.menuButton:hover {
+  color: var(--gold);
+}
+
+/* ================================
+   LOGOS FLOTANTES
+================================ */
+.logoIcon {
+  filter: drop-shadow(0 0 6px rgba(213, 162, 83, 0.45));
+}
+
+.floatingLeftLogo,
+.floatingCenterLogo {
+  filter: drop-shadow(0 0 6px rgba(213, 162, 83, 0.4));
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .container {
+    justify-content: center;
+    padding: 1.8rem 1rem;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .menuButton {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .floatingCenterLogo {
+    display: none;
+  }
+}
