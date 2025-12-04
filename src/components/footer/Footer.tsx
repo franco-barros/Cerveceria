@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { usePathname } from "next/navigation";
 import styles from "../../styles/Footer.module.css";
 
@@ -27,13 +26,17 @@ const Footer = () => {
   return (
     <footer id="footer" className={styles.footer}>
       <div className={styles.content}>
+        {/* --- DESCRIPCIÓN PRINCIPAL --- */}
         <div className={styles.section}>
           <p className={styles.description}>
-            Brindamos asesoría y defensa legal especializada en derecho laboral
-            y civil con compromiso, experiencia y ética profesional.
+            En Templaria elaboramos cerveza artesanal inspirada en la tradición,
+            el fuego y el espíritu medieval. Utilizamos maltas premium,
+            fermentación cuidada y recetas que buscan un sabor auténtico y lleno
+            de carácter templario.
           </p>
         </div>
 
+        {/* --- ENLACES SOLO EN HOME --- */}
         {isHome && (
           <div className={styles.section}>
             <h4 className={styles.subtitle}>Enlaces</h4>
@@ -56,7 +59,7 @@ const Footer = () => {
 
       <div className={styles.bottomBar}>
         <p className={styles.copy}>
-          © 2025 Tascheret - Videla | Todos los derechos reservados.
+          © 2025 Templaria Cerveza Artesanal | Todos los derechos reservados.
         </p>
       </div>
     </footer>

@@ -9,7 +9,7 @@ const beers = [
     name: "Golden Ale",
     style: "Rubia Suave",
     abv: "5.2%",
-    image: "/beers/golden.png",
+    image: "/images/Cerveza1.png",
     description: "Refrescante, suave y con notas leves a cereal.",
   },
   {
@@ -17,7 +17,7 @@ const beers = [
     name: "Irish Red",
     style: "Roja Caramelizada",
     abv: "5.0%",
-    image: "/beers/red.png",
+    image: "/images/Cerveza5.png",
     description: "Cuerpo medio, toques a caramelo y leve tostado.",
   },
   {
@@ -25,7 +25,7 @@ const beers = [
     name: "Stout",
     style: "Negra Cremosa",
     abv: "6.0%",
-    image: "/beers/stout.png",
+    image: "/images/Cerveza6.png",
     description: "Oscura, intensa y con notas a café y chocolate.",
   },
 ];
@@ -49,9 +49,7 @@ export default function BeerTypes() {
 
             <h3 className={styles.name}>{beer.name}</h3>
             <p className={styles.style}>{beer.style}</p>
-
             <span className={styles.abv}>ABV {beer.abv}</span>
-
             <p className={styles.description}>{beer.description}</p>
           </div>
         ))}

@@ -1,29 +1,28 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
+import { Users } from "lucide-react";
 import styles from "../../styles/about/AboutUs.module.css";
 import { FadeInOnScroll } from "../shared/fadeInonscroll";
-import { Users } from "lucide-react";
+import AboutBlock from "./aboutblock";
 
 const aboutData = [
   {
-    src: "/about1.jpg",
+    src: "/images/Cerveza.png",
     alt: "Cerveza artesanal 1",
     text: "En Templaria elaboramos cerveza artesanal con dedicación, fuego y tradición. Seleccionamos maltas premium y lúpulos de carácter para lograr sabores auténticos.",
-    reverse: false, // texto izquierda, imagen derecha
+    reverse: false,
   },
   {
-    src: "/about2.jpg",
+    src: "/images/Cerveza2.png",
     alt: "Cerveza artesanal 2",
     text: "Nuestro proceso respeta métodos clásicos para ofrecer una experiencia templaria intensa, cálida y llena de personalidad.",
-    reverse: true, // imagen izquierda, texto derecha
+    reverse: true,
   },
   {
-    src: "/about3.jpg",
+    src: "/images/Cerveza4.png",
     alt: "Cerveza artesanal 3",
     text: "Creamos cervezas que destacan por su aroma y sabor, con un equilibrio perfecto entre tradición y creatividad.",
-    reverse: false, // texto izquierda, imagen derecha
+    reverse: false,
   },
 ];
 
@@ -40,59 +39,10 @@ const AboutUs: React.FC = () => {
         </div>
       </FadeInOnScroll>
 
-      {/* DESCRIPCIONES DESKTOP */}
-      {aboutData.map((item, index) => (
-        <FadeInOnScroll key={index}>
-          <div className={styles.desktopLayout}>
-            {!item.reverse ? (
-              <>
-                <div className={styles.infoWrapper}>
-                  <div className={styles.textWrapper}>{item.text}</div>
-                </div>
-                <div className={styles.imageWrapper}>
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    style={{ objectFit: "cover" }}
-                  />
-                </div>
-              </>
-            ) : (
-              <>
-                <div className={styles.imageWrapper}>
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    style={{ objectFit: "cover" }}
-                  />
-                </div>
-                <div className={styles.infoWrapper}>
-                  <div className={styles.textWrapper}>{item.text}</div>
-                </div>
-              </>
-            )}
-          </div>
-        </FadeInOnScroll>
+      {/* BLOQUES */}
+      {aboutData.map((item, i) => (
+        <AboutBlock key={i} {...item} />
       ))}
-
-      {/* DESCRIPCIONES MOBILE */}
-      <div className={styles.mobileLayout}>
-        {aboutData.map((item, index) => (
-          <FadeInOnScroll key={index}>
-            <div className={styles.mobileImage}>
-              <Image
-                src={item.src}
-                alt={item.alt}
-                fill
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-            <div className={styles.descriptionCard}>{item.text}</div>
-          </FadeInOnScroll>
-        ))}
-      </div>
     </section>
   );
 };

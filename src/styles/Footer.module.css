@@ -1,51 +1,57 @@
+/* ================================
+   FOOTER — TEMPLARIA PREMIUM
+================================ */
+
 .footer {
-  background-color: #ffffff;
-  color: #111111;
-  padding: 2rem 1.5rem;
+  --amber: #c88a2a;
+  --gold: #d5a253;
+  --wood-dark: #4a2e1b;
+  --carbon: #1c1c1c;
+  --wheat: #f5e3c0;
+
+  background: var(--carbon);
+  color: var(--wheat);
+  padding: 3rem 1.5rem 2rem;
   font-family: var(--font-rethink-sans);
-  font-weight: 400;
+  border-top: 2px solid rgba(200, 138, 42, 0.25);
 }
 
 .content {
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  margin-bottom: 1.5rem;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-bottom: 2rem;
 }
 
+/* ----------------------------------
+   SECTION
+----------------------------------- */
 .section {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-}
-
-.title {
-  font-size: 1rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #8d6b24;
-  font-family: var(--font-rethink-sans);
+  gap: 0.7rem;
 }
 
 .subtitle {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #114137;
-  border-bottom: 1px solid rgba(17, 65, 55, 0.25);
-  padding-bottom: 0.2rem;
-  margin-bottom: 0.5rem;
-  font-family: var(--font-rethink-sans);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid rgba(213, 162, 83, 0.45);
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.7rem;
 }
 
 .description {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: #111111;
-  font-family: var(--font-rethink-sans);
+  font-size: 0.95rem;
+  color: var(--wheat);
+  line-height: 1.6;
+  opacity: 0.9;
 }
 
+/* ----------------------------------
+   LIST LINKS
+----------------------------------- */
 .list {
   list-style: none;
   padding: 0;
@@ -53,9 +59,7 @@
 }
 
 .list li {
-  margin-bottom: 0.4rem;
-  font-size: 0.9rem;
-  font-family: var(--font-rethink-sans);
+  margin-bottom: 0.6rem;
 }
 
 .list li a,
@@ -63,84 +67,43 @@
   background: none;
   border: none;
   padding: 0;
-  margin: 0;
-  font: inherit;
-  color: #114137;
+  color: var(--wheat);
   cursor: pointer;
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-size: 0.95rem;
+  transition: color 0.25s ease, letter-spacing 0.25s ease;
 }
 
 .list li a:hover,
 .linkButton:hover {
-  color: #8d6b24;
-  text-decoration: underline;
+  color: var(--gold);
+  letter-spacing: 0.5px;
 }
 
-/* Bottom bar */
+/* ----------------------------------
+   BOTTOM BAR
+----------------------------------- */
 .bottomBar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-top: 1px solid rgba(17, 65, 55, 0.25);
-  padding-top: 1rem;
+  border-top: 1px solid rgba(213, 162, 83, 0.3);
+  padding-top: 1.2rem;
+  text-align: center;
 }
 
 .copy {
-  font-size: 0.8rem;
-  color: #114137;
-  text-align: center;
-  width: 100%;
-  font-family: var(--font-rethink-sans);
-  font-weight: 400;
+  font-size: 0.85rem;
+  opacity: 0.85;
+  color: var(--wheat);
 }
 
-/* -------------------------
-   LOGO — MOBILE DEFAULT
-------------------------- */
-.iconWrapper {
-  display: flex;
-  justify-content: center; /* MOBILE → CENTER */
-  margin-bottom: 0.3rem;
-}
-
-.icon {
-  width: 140px; /* tamaño mobile */
-  height: auto;
-  object-fit: contain;
-}
-
-.section:first-child {
-  gap: 0.2rem;
-}
-
-/* -------------------------
-   DESKTOP
-------------------------- */
-@media (min-width: 769px) {
-  .iconWrapper {
-    justify-content: flex-start; /* DESKTOP → LEFT */
-  }
-
-  .icon {
-    width: 180px; /* versión más grande */
-  }
-
-  .section:first-child {
-    text-align: left;
-  }
-}
-
-/* -------------------------
-   MOBILE ADAPTATIONS
-------------------------- */
+/* ----------------------------------
+   MOBILE — CENTER
+----------------------------------- */
 @media (max-width: 768px) {
   .content {
     grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .title,
   .subtitle,
   .description,
   .list li {
