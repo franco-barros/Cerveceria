@@ -1,9 +1,20 @@
 "use client";
 
-import Image from "next/image";
+import BeerCard from "./beercard";
+import BeerTypesSlider from "./beertypesslider";
+
 import styles from "../../styles/beertypes/BeerTypes.module.css";
 
-const beers = [
+interface Beer {
+  id: number;
+  name: string;
+  style: string;
+  abv: string;
+  image: string;
+  description: string;
+}
+
+const beers: Beer[] = [
   {
     id: 1,
     name: "Golden Ale",
@@ -35,25 +46,15 @@ export default function BeerTypes() {
     <section className={styles.section} id="beers">
       <h2 className={styles.title}>Nuestras Cervezas</h2>
 
+      {/* Desktop grid */}
       <div className={styles.grid}>
-        {beers.map((beer) => (
-          <div key={beer.id} className={styles.card}>
-            <div className={styles.imageWrapper}>
-              <Image
-                src={beer.image}
-                alt={beer.name}
-                fill
-                className={styles.image}
-              />
-            </div>
-
-            <h3 className={styles.name}>{beer.name}</h3>
-            <p className={styles.style}>{beer.style}</p>
-            <span className={styles.abv}>ABV {beer.abv}</span>
-            <p className={styles.description}>{beer.description}</p>
-          </div>
+        {beers.map((b) => (
+          <BeerCard key={b.id} beer={b} />
         ))}
       </div>
+
+      {/* Mobile slider */}
+      <BeerTypesSlider beers={beers} />
     </section>
   );
 }

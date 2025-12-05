@@ -21,7 +21,6 @@ const AboutBlock: React.FC<Props> = ({ src, alt, text, reverse }) => {
             alt={alt}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            style={{ objectFit: "cover" }}
           />
         </div>
 

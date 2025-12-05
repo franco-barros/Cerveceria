@@ -1,0 +1,81 @@
+/* =============================
+   ABOUT SECTION — SLIDER (MOBILE)
+============================== */
+
+.sliderSection {
+  --amber: #c88a2a;
+  --gold: #d5a253;
+  --wood-dark: #4a2e1b;
+  --black-carbon: #0d0d0d;
+  --wheat: #f5e3c0;
+
+  position: relative;
+  padding: 4rem 0.5rem;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    #1c1c1c 0%,
+    #0a0a0a 40%,
+    #0a0a0a 60%,
+    #1c1c1c 100%
+  );
+  color: var(--wheat);
+  font-family: var(--font-rethink-sans);
+}
+
+/* Background texture */
+.sliderSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: var(--black-carbon);
+
+  background-image: radial-gradient(
+      circle at 20% 20%,
+      rgba(213, 162, 83, 0.14) 0 2px,
+      transparent 2px 26px
+    ),
+    radial-gradient(
+      circle at 80% 60%,
+      rgba(200, 138, 42, 0.12) 0 2px,
+      transparent 2px 34px
+    ),
+    radial-gradient(
+      circle at 40% 80%,
+      rgba(245, 227, 192, 0.12) 0 1.6px,
+      transparent 1.6px 30px
+    );
+
+  background-size: 90px 90px, 110px 110px, 80px 80px;
+  opacity: 0.75;
+  filter: contrast(1.5) brightness(1.1) blur(0.7px);
+  transform: scale(1.2);
+}
+
+/* =============================
+      SLIDER ELEMENTS
+============================== */
+
+.keenSlider {
+  position: relative;
+  z-index: 5;
+  overflow: visible !important; /* ✔ evita que Keen corte el contenido */
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* ✔ asegura que el block se vea como en mobile */
+  padding: 1rem 0;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* Force slide width (Keen hack) */
+:global(.keen-slider__slide) {
+  width: 100% !important;
+}

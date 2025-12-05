@@ -4,6 +4,8 @@ import { Users } from "lucide-react";
 import styles from "../../styles/about/AboutUs.module.css";
 import { FadeInOnScroll } from "../shared/fadeInonscroll";
 import AboutBlock from "./aboutblock";
+import AboutUsSlider from "./aboutusslider";
+import { useEffect, useState } from "react";
 
 const aboutData = [
   {
@@ -27,9 +29,17 @@ const aboutData = [
 ];
 
 const AboutUs: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth <= 768);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
   return (
     <section id="aboutus" className={styles.aboutSection}>
-      {/* BADGE */}
       <FadeInOnScroll>
         <div className={styles.badgeWrapper}>
           <span className={styles.badge}>
@@ -39,10 +49,13 @@ const AboutUs: React.FC = () => {
         </div>
       </FadeInOnScroll>
 
-      {/* BLOQUES */}
-      {aboutData.map((item, i) => (
-        <AboutBlock key={i} {...item} />
-      ))}
+      {/* MOBILE → Slider */}
+      {isMobile ? (
+        <AboutUsSlider data={aboutData} />
+      ) : (
+        /* DESKTOP → Normal blocks */
+        aboutData.map((item, i) => <AboutBlock key={i} {...item} />)
+      )}
     </section>
   );
 };
