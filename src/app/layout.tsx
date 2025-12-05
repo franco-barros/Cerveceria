@@ -13,15 +13,26 @@ const rethinkSans = Rethink_Sans({
 export const metadata = {
   title: "Cervecería Templaria",
   description: "Sabores artesanales forjados con espíritu templario.",
+  icons: {
+    icon: "icons/Templaria.png",
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="es" className={rethinkSans.variable}>
-      <body>
+    <html lang="es" className={`${rethinkSans.variable}`}>
+      <body
+        className="
+          bg-black text-white
+          antialiased
+          overflow-x-hidden
+        "
+      >
         <ClientNavbarWrapper>{children}</ClientNavbarWrapper>
+
         <Footer />
       </body>
     </html>
