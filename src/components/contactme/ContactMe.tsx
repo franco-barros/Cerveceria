@@ -150,7 +150,7 @@ const ContactMe: React.FC = () => {
 
             <div className={styles.bottomImageWrapper}>
               <Image
-                src="/icons/Templaria.png"
+                src="/icons/Logo.png"
                 alt="Decoración"
                 width={120}
                 height={100}

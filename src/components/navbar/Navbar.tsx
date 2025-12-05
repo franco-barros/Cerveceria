@@ -21,9 +21,9 @@ const Navbar: React.FC = () => {
   );
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
       setIsOpen(false);
     }
   };
@@ -32,7 +32,6 @@ const Navbar: React.FC = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
 
-      // inicio de página
       if (window.scrollY === 0) {
         setActiveSection("hero");
         return;
@@ -45,6 +44,7 @@ const Navbar: React.FC = () => {
         if (section) {
           const top = section.offsetTop;
           const bottom = top + section.offsetHeight;
+
           if (midpoint >= top && midpoint < bottom) {
             setActiveSection(navLinks[i].id);
             break;
@@ -54,8 +54,6 @@ const Navbar: React.FC = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Llamado seguro
     setTimeout(() => handleScroll(), 0);
 
     return () => window.removeEventListener("scroll", handleScroll);
@@ -68,25 +66,34 @@ const Navbar: React.FC = () => {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.container}>
-        {/* Logo */}
+        {/* IZQUIERDA — LOGO */}
         <button className={styles.logo} onClick={() => scrollToSection("hero")}>
           <Image
-            src="/icons/Templaria.png"
+            src="/icons/Logo.png"
             alt="Templaria Logo"
             fill
             className={styles.logoIcon}
           />
         </button>
 
+        {/* CENTRO — NUEVO BOTÓN */}
+        <a
+          className={styles.storeButton}
+          href="https://tu-tienda-nube.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ir a Tienda
+        </a>
+
+        {/* DERECHA — LINKS */}
         <div className={styles.links}>
-          {navLinks.map((link, index) => (
+          {navLinks.map((link) => (
             <button
               key={link.id}
-              className={[
-                styles.navLink,
-                styles[`link${(index % 3) + 1}`],
-                activeSection === link.id ? styles.activeLink : "",
-              ].join(" ")}
+              className={`${styles.navLink} ${
+                activeSection === link.id ? styles.activeLink : ""
+              }`}
               onClick={() => scrollToSection(link.id)}
             >
               {link.label}
@@ -94,25 +101,20 @@ const Navbar: React.FC = () => {
           ))}
         </div>
 
-        {/* Menú mobile */}
+        {/* MOBILE MENU */}
         <button
           className={styles.menuButton}
-          onClick={() => setIsOpen((prev) => !prev)}
-          aria-label="Toggle menu"
+          onClick={() => setIsOpen(!isOpen)}
         >
           ☰
         </button>
       </div>
 
-      {/* Overlay mobile */}
       {isOpen && (
         <AnimatedMenuOverlay
           onClose={() => setIsOpen(false)}
           scrollToSection={scrollToSection}
-          navLinks={navLinks.map(({ id, label }) => ({
-            href: id,
-            label,
-          }))}
+          navLinks={navLinks.map(({ id, label }) => ({ href: id, label }))}
           activeSection={activeSection}
         />
       )}

@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
         <div className={styles.logoLayer}>
           <div className={styles.logoInner}>
             <Image
-              src="/icons/Templaria.png"
+              src="/icons/Logo.png"
               alt="Templaria logo"
               fill
               priority

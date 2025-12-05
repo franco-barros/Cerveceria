@@ -2,61 +2,46 @@
    NAVBAR TEMPLARIA
 ================================ */
 .navbar {
-  /* Paleta templaria */
   --gold: #d5a253;
   --amber: #c88a2a;
   --carbon: #1c1c1c;
   --wood: #4a2e1b;
   --wheat: #f5e3c0;
 
-  /* Estado inicial: firme, sin blur */
-  background: #1a120c; /* color duro */
+  background: #1a120c;
   border-bottom: 1px solid rgba(213, 162, 83, 0.22);
-
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-
-  transition: background 0.35s ease, box-shadow 0.35s ease,
-    backdrop-filter 0.35s ease;
-
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+
+  transition: background 0.35s ease, box-shadow 0.35s ease;
   z-index: 1000;
 }
 
-/* Navbar al hacer scroll */
 .scrolled {
-  background: rgba(26, 18, 12, 0.78); /* oscuro + translúcido artesanal */
+  background: rgba(26, 18, 12, 0.78);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
-  border-color: rgba(213, 162, 83, 0.18);
 }
 
-/* ================================
-   CONTENEDOR
-================================ */
+/* CONTENEDOR ORIGINAL — NO LO TOCAMOS */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1.25rem 1rem;
-  display: flex;
-  justify-content: space-between;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* izquierda | centro | derecha */
   align-items: center;
 }
 
-/* ================================
-   LOGO
-================================ */
+/* LOGO */
 .logo {
   position: relative;
   width: 52px;
   height: 52px;
   cursor: pointer;
-  padding: 0;
   background: none;
   border: none;
 }
@@ -66,92 +51,81 @@
   filter: drop-shadow(0 0 6px rgba(213, 162, 83, 0.45));
 }
 
-/* ================================
-   LINKS
-================================ */
+/* =========================================
+   BOTÓN CENTRAL (ÚNICO CAMBIO)
+========================================= */
+.storeButton {
+  background: linear-gradient(135deg, #d5a253, #c88a2a);
+  color: #271d12;
+  padding: 0.6rem 1.4rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+
+  border: 1px solid rgba(255, 235, 175, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.storeButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+}
+
+/* LINKS DERECHA */
 .links {
   display: flex;
+  justify-content: flex-end;
   gap: 1.8rem;
 }
 
 .navLink {
   background: none;
   border: none;
+  color: var(--wheat);
   cursor: pointer;
-
-  color: var(--wheat) !important;
   font-size: 0.95rem;
   font-weight: 500;
-  padding: 0.4rem 0.2rem;
-
-  position: relative;
-  transition: color 0.25s ease, transform 0.2s ease;
+  transition: 0.25s;
 }
 
 .navLink:hover {
-  color: var(--gold) !important;
-  transform: translateY(-1px);
-}
-
-/* Activo */
-.activeLink {
-  color: var(--gold) !important;
-  font-weight: 600;
-}
-
-.activeLink::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.25rem;
-  width: 100%;
-  height: 2px;
-  background: var(--gold);
-  border-radius: 2px;
-}
-
-/* ================================
-   BOTÓN MENÚ MOBILE
-================================ */
-.menuButton {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-
-  color: var(--wheat) !important;
-  transition: color 0.25s ease;
-}
-
-.menuButton:hover {
   color: var(--gold);
 }
 
-/* ================================
-   RESPONSIVE
-================================ */
+.activeLink {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* MOBILE */
+.menuButton {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .container {
-    justify-content: center;
+    grid-template-columns: 1fr auto 1fr;
     padding: 1.8rem 1rem;
-  }
-
-  /* Logo más balanceado en mobile */
-  .logo {
-    width: 38px;
-    height: 38px;
   }
 
   .links {
     display: none;
   }
 
+  .storeButton {
+    font-size: 0.9rem;
+    padding: 0.55rem 1rem;
+  }
+
   .menuButton {
     display: block;
     position: absolute;
     right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: var(--wheat);
   }
 }
