@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
         <div className={styles.logoLayer}>
           <div className={styles.logoInner}>
             <Image
-              src="/icons/templaria-logo.png"
+              src="/icons/Templaria.png"
               alt="Templaria logo"
               fill
               sizes="(max-width: 768px) 60vw, 400px"

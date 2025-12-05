@@ -32,6 +32,7 @@ const Navbar: React.FC = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
 
+      // inicio de página
       if (window.scrollY === 0) {
         setActiveSection("hero");
         return;
@@ -54,8 +55,8 @@ const Navbar: React.FC = () => {
 
     window.addEventListener("scroll", handleScroll);
 
-    setActiveSection("hero");
-    handleScroll();
+    // Llamado seguro
+    setTimeout(() => handleScroll(), 0);
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [navLinks]);
@@ -70,7 +71,7 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <button className={styles.logo} onClick={() => scrollToSection("hero")}>
           <Image
-            src="/icons/LogoversiónC-4.png"
+            src="/icons/Templaria.png"
             alt="Tascheret - Videla"
             fill
             className={styles.logoIcon}
