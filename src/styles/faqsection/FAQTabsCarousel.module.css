@@ -1,5 +1,5 @@
 /* ================================
-   TABS — METAL TEMPLARIO
+   TABS — METAL TEMPLARIO (TRANSPARENTE)
 ================================ */
 
 .tabList {
@@ -10,12 +10,12 @@
   margin-bottom: 2rem;
 }
 
-/* TAB metálico */
+/* TAB metálico transparente */
 .tabItem {
   position: relative;
   padding: 0.9rem 1.8rem;
 
-  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  background: transparent; /* 🔥 transparente */
   border-radius: 10px;
   backdrop-filter: blur(4px);
 
@@ -35,13 +35,13 @@
 
 .tabItem:hover {
   transform: translateY(-4px);
-  background: linear-gradient(135deg, #303030, #404040);
+  background: rgba(50, 50, 50, 0.2); /* leve sombreado para hover */
   border-color: rgba(210, 210, 210, 0.55);
 }
 
 /* TAB activo — metal pulido + brillo */
 .tabItemActive {
-  background: linear-gradient(135deg, #3b3b3b, #606060);
+  background: rgba(80, 80, 80, 0.25); /* transparente con degradado leve */
   color: #ffffff;
 
   border-color: rgba(220, 220, 220, 0.85);
@@ -67,7 +67,7 @@
 }
 
 /* ================================
-   PREGUNTAS — TARJETAS DE ACERO
+   PREGUNTAS — TARJETAS DE ACERO TRANSPARENTES
 ================================ */
 
 .questionList {
@@ -82,18 +82,13 @@
   align-items: center;
 }
 
-/* tarjeta metálica */
+/* tarjeta metálica transparente */
 .questionItem {
   width: 100%;
   border-radius: 14px;
   padding: 1.4rem 1.7rem;
 
-  background: linear-gradient(
-    135deg,
-    rgba(35, 35, 35, 0.85),
-    rgba(55, 55, 55, 0.85)
-  );
-
+  background: transparent; /* 🔥 transparente */
   border: 2px solid rgba(160, 160, 160, 0.35);
   outline: 4px solid rgba(120, 160, 200, 0.18);
   outline-offset: -6px;
@@ -112,15 +107,9 @@
 
 .questionItem:hover {
   transform: translateY(-3px);
-  background: linear-gradient(
-    135deg,
-    rgba(55, 55, 55, 0.95),
-    rgba(85, 85, 85, 0.95)
-  );
-
+  background: rgba(85, 85, 85, 0.2); /* leve sombreado en hover */
   border-color: rgba(200, 200, 200, 0.55);
   outline-color: rgba(140, 170, 210, 0.28);
-
   box-shadow: 0 20px 36px rgba(0, 0, 0, 0.55);
 }
 

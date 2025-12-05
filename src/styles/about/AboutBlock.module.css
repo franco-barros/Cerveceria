@@ -2,10 +2,10 @@
    ABOUT BLOCK — DESKTOP
 ============================= */
 .block {
+  background: transparent;
   display: flex;
   align-items: center;
   gap: 2.5rem;
-  margin-bottom: 4rem;
 }
 
 .reverse {
@@ -16,12 +16,30 @@
   position: relative;
   width: 50%;
   height: 360px;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
+
+  border: 2px solid rgba(213, 162, 83, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35),
+    inset 0 0 8px rgba(213, 162, 83, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.imageWrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45),
+    inset 0 0 10px rgba(213, 162, 83, 0.25);
+}
+
+/* Imagen ocupa todo el contenedor respetando el border-radius */
 .imageWrapper :global(img) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  border-radius: 16px;
 }
 
 .textWrapper {
@@ -48,11 +66,17 @@
   .imageWrapper {
     width: 100%;
     height: auto;
-    aspect-ratio: 1 / 1; /* 🔥 evita recortes */
+    aspect-ratio: 1 / 1;
   }
 
   .imageWrapper :global(img) {
-    object-fit: contain !important; /* 🔥 imagen completa */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
   }
 
   .textWrapper {

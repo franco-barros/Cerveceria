@@ -20,7 +20,9 @@ const AboutBlock: React.FC<Props> = ({ src, alt, text, reverse }) => {
             src={src}
             alt={alt}
             fill
-            sizes="(max-width: 768px) 100vw, 50vw"
+            style={{ objectFit: "cover", borderRadius: "14px" }} // asegura cobertura y borde
+            sizes="(max-width: 768px) 100vw, 50vw" // móvil 100%, desktop 50%
+            priority
           />
         </div>
 
