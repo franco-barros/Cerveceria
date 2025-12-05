@@ -16,7 +16,13 @@
   padding: 5rem 1.5rem 6.5rem;
 
   /* FONDO: acero pulido + viñeta */
-  background: radial-gradient(circle at 50% 30%, #404040 0%, #161616 70%);
+  background: linear-gradient(
+    to bottom,
+    #1c1c1c 0%,
+    #0a0a0a 40%,
+    #0a0a0a 60%,
+    #1c1c1c 100%
+  );
   color: var(--wheat);
   text-align: center;
   z-index: 0;

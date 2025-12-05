@@ -4,39 +4,15 @@
 .brewAreasSection {
   position: relative;
   padding: 5rem 1rem;
-  background-color: #1c1c1c;
+  background: linear-gradient(
+    to bottom,
+    #1c1c1c 0%,
+    #0a0a0a 40%,
+    #0a0a0a 60%,
+    #1c1c1c 100%
+  );
   overflow: hidden;
   color: #f5e3c0;
-}
-
-/* Textura carbón templaria */
-.brewAreasSection::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: #1c1c1c;
-  z-index: 0;
-
-  background-image: radial-gradient(
-      circle at 10% 25%,
-      rgba(213, 162, 83, 0.17) 0 2px,
-      transparent 2px 32px
-    ),
-    radial-gradient(
-      circle at 70% 60%,
-      rgba(200, 138, 42, 0.15) 0 2.2px,
-      transparent 2.2px 36px
-    ),
-    radial-gradient(
-      circle at 40% 85%,
-      rgba(245, 227, 192, 0.15) 0 2px,
-      transparent 2px 34px
-    );
-
-  background-size: 110px 110px, 130px 130px, 120px 120px;
-  opacity: 0.9;
-  filter: contrast(1.9) brightness(1.2) blur(1px);
-  transform: scale(1.35);
 }
 
 /* =============================
