@@ -30,8 +30,8 @@ const Hero: React.FC = () => {
               src="/icons/Templaria.png"
               alt="Templaria logo"
               fill
-              sizes="(max-width: 768px) 60vw, 400px"
               priority
+              sizes="(max-width: 768px) 60vw, 400px"
               style={{ objectFit: "contain" }}
             />
           </div>
