@@ -197,7 +197,7 @@
 
   .buttons {
     flex-direction: column;
-    align-items: center; /* <--- ESTO FALTA */
+    align-items: center;
   }
 
   .btn {
