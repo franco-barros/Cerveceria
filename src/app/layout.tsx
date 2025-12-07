@@ -11,10 +11,11 @@ const rethinkSans = Rethink_Sans({
 });
 
 export const metadata = {
-  title: "Cervecería Templaria",
-  description: "Sabores artesanales forjados con espíritu templario.",
+  title: "Cardenal amarillo - Cerveza artesanal",
+  description:
+    "Cardenal Amarillo: cerveza artesanal con identidad propia y carácter auténtico.",
   icons: {
-    icon: "icons/Templaria.png",
+    icon: "icons/Logo.png",
     shortcut: "/favicon.ico",
   },
 };

@@ -13,22 +13,19 @@ const Hero: React.FC = () => {
 
   return (
     <section id="hero" className={styles.hero}>
-      {/* Fondo negro con textura (del CSS) */}
       <div className={styles.overlay} />
 
-      {/* Contenido */}
       <motion.div
         className={styles.content}
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        {/* Logo */}
         <div className={styles.logoLayer}>
           <div className={styles.logoInner}>
             <Image
               src="/icons/Logo.png"
-              alt="Templaria logo"
+              alt="Cardenal Amarillo logo"
               fill
               priority
               sizes="(max-width: 768px) 60vw, 400px"
@@ -38,11 +35,11 @@ const Hero: React.FC = () => {
         </div>
 
         <h1 className={styles.title}>
-          Cerveza artesanal hecha con pasión templaria.
+          Cerveza artesanal con alma de Cardenal Amarillo.
         </h1>
 
         <p className={styles.phrase}>
-          Tradición, fuego, malta y carácter. Una experiencia auténtica.
+          Sabores intensos, raíces locales y carácter propio en cada vaso.
         </p>
 
         <div className={styles.buttons}>

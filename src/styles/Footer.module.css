@@ -80,6 +80,37 @@
   letter-spacing: 0.5px;
 }
 
+.destillerLink {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.9rem 1.2rem;
+  border-radius: 10px;
+  margin-top: 0.6rem;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.destillerLink:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.destillerLogo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.smallDescription {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  line-height: 1.4;
+}
+
 /* ----------------------------------
    BOTTOM BAR
 ----------------------------------- */

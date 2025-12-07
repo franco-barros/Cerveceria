@@ -11,19 +11,19 @@ const aboutData = [
   {
     src: "/images/Cerveza.png",
     alt: "Cerveza artesanal 1",
-    text: "En Templaria elaboramos cerveza artesanal con dedicación, fuego y tradición. Seleccionamos maltas premium y lúpulos de carácter para lograr sabores auténticos.",
+    text: "En Cardenal Amarillo elaboramos cerveza artesanal con dedicación, pasión y carácter propio. Trabajamos con maltas seleccionadas y lúpulos de calidad para lograr perfiles llenos de aroma y sabor.",
     reverse: false,
   },
   {
     src: "/images/Cerveza2.png",
     alt: "Cerveza artesanal 2",
-    text: "Nuestro proceso respeta métodos clásicos para ofrecer una experiencia templaria intensa, cálida y llena de personalidad.",
+    text: "Cuidamos cada etapa del proceso cervecero, respetando métodos tradicionales y potenciándolos con creatividad para ofrecer una experiencia única en cada pinta.",
     reverse: true,
   },
   {
     src: "/images/Cerveza4.png",
     alt: "Cerveza artesanal 3",
-    text: "Creamos cervezas que destacan por su aroma y sabor, con un equilibrio perfecto entre tradición y creatividad.",
+    text: "Nuestras cervezas se destacan por su equilibrio, frescura y personalidad. En cada lote buscamos transmitir la esencia de Cardenal Amarillo: artesanal, auténtica y cercana.",
     reverse: false,
   },
 ];

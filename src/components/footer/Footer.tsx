@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import styles from "../../styles/Footer.module.css";
 
@@ -29,10 +30,37 @@ const Footer = () => {
         {/* --- DESCRIPCIÓN PRINCIPAL --- */}
         <div className={styles.section}>
           <p className={styles.description}>
-            En Templaria elaboramos cerveza artesanal inspirada en la tradición,
-            el fuego y el espíritu medieval. Utilizamos maltas premium,
-            fermentación cuidada y recetas que buscan un sabor auténtico y lleno
-            de carácter templario.
+            Cardenal Amarillo es una cervecería artesanal comprometida con la
+            calidad y el sabor auténtico. Seleccionamos ingredientes nobles,
+            cuidamos cada etapa del proceso y elaboramos cervezas con identidad
+            propia, equilibrio y carácter.
+          </p>
+        </div>
+
+        {/* --- DESTILLER ONE --- */}
+        <div className={styles.section}>
+          <h4 className={styles.subtitle}>Explorá también</h4>
+
+          <a
+            href=""
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.destillerLink}
+          >
+            <Image
+              src="/icons/Destileria.png"
+              alt="Destiller One"
+              width={48}
+              height={48}
+              className={styles.destillerLogo}
+            />
+            <span>Ir a Destiller One</span>
+          </a>
+
+          {/* DESCRIPCIÓN EXTRA */}
+          <p className={styles.smallDescription}>
+            Descubrí destilados artesanales creados con la misma dedicación y
+            pasión que nuestras cervezas.
           </p>
         </div>
 
@@ -59,7 +87,7 @@ const Footer = () => {
 
       <div className={styles.bottomBar}>
         <p className={styles.copy}>
-          © 2025 Templaria Cerveza Artesanal | Todos los derechos reservados.
+          © 2025 Cardenal Amarillo | Todos los derechos reservados.
         </p>
       </div>
     </footer>

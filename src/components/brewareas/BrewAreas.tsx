@@ -18,42 +18,42 @@ const brewAreas: BrewArea[] = [
     id: "1",
     title: "Selección de Ingredientes",
     description:
-      "Elegimos maltas premium, lúpulos frescos y levaduras cuidadas que definen el carácter templario en cada lote.",
+      "Elegimos maltas de calidad, lúpulos frescos y levaduras puras que definen el carácter auténtico de Cardenal Amarillo.",
     icon: <Wheat size={28} />,
   },
   {
     id: "2",
     title: "Maceración y Cocción",
     description:
-      "Realizamos un proceso preciso de macerado utilizando temperaturas controladas y cocción lenta para extraer sabores auténticos.",
+      "Realizamos un macerado controlado y una cocción precisa para extraer los sabores y aromas que distinguen cada estilo.",
     icon: <Flame size={28} />,
   },
   {
     id: "3",
     title: "Fermentación",
     description:
-      "Cada cerveza descansa el tiempo necesario para desarrollar personalidad, cuerpo y aroma propios.",
+      "Cada cerveza fermenta el tiempo necesario para desarrollar cuerpo, aroma y la personalidad que buscamos en cada lote.",
     icon: <Droplets size={28} />,
   },
   {
     id: "4",
     title: "Lupulado",
     description:
-      "Aplicamos técnicas de lupulado clásicas y modernas (dry hopping, whirlpool) para lograr perfiles intensos.",
+      "Aplicamos técnicas de lupulado clásico y moderno —whirlpool, dry hopping— para obtener perfiles aromáticos equilibrados e intensos.",
     icon: <Hop size={28} />,
   },
   {
     id: "5",
     title: "Maduración",
     description:
-      "Damos a cada estilo su tiempo de reposo óptimo, logrando equilibrio profundo y suavidad templaria.",
+      "Respetamos el tiempo de reposo de cada estilo para lograr suavidad, equilibrio y una cerveza lista para disfrutarse al máximo.",
     icon: <Factory size={28} />,
   },
   {
     id: "6",
-    title: "Estilos de Cerveza",
+    title: "Nuestros Estilos",
     description:
-      "Creamos estilos como IPA, Golden, Scottish y Porter, todos con nuestro sello tradicional de fuego y carácter.",
+      "Creamos variedades como IPA, Golden, Scottish, Porter y más, siempre con el sello distintivo de Cardenal Amarillo.",
     icon: <Beer size={28} />,
   },
 ];
@@ -82,14 +82,14 @@ const BrewAreas: React.FC = () => {
         <div className={styles.badgeWrapper}>
           <span className={styles.badge}>
             <Beer size={18} style={{ marginRight: "0.4rem" }} />
-            Proceso Templario
+            Proceso Cervecero
           </span>
         </div>
 
         <p className={styles.description}>
-          Elaboramos cerveza artesanal con identidad propia, combinando
-          tradición medieval, fuego y materia prima seleccionada para lograr un
-          sabor único.
+          En Cardenal Amarillo producimos cerveza artesanal cuidando cada etapa
+          del proceso. Combinamos técnica, pasión y buenos ingredientes para
+          crear sabores auténticos, equilibrados y llenos de carácter.
         </p>
       </FadeInOnScroll>
 

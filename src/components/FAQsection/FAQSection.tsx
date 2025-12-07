@@ -22,7 +22,7 @@ const FAQSection: React.FC = () => {
         {/* DESCRIPCIÓN */}
         <p className={styles.description}>
           Encontrá respuestas a las preguntas más comunes sobre la cervecería
-          templaria y nuestro servicio.
+          Cardenal amarillo y nuestro servicio.
         </p>
 
         {/* TABS / CAROUSEL */}
