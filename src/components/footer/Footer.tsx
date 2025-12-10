@@ -42,7 +42,7 @@ const Footer = () => {
           <h4 className={styles.subtitle}>Explorá también</h4>
 
           <a
-            href=""
+            href="https://destileria.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.destillerLink}
